@@ -111,7 +111,7 @@
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "@vercel/node": "^5.3.26",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "latest",
     "baseline-browser-mapping": "^2.9.19",
     "cross-env": "^10.1.0",
@@ -126,7 +126,7 @@
     "tailwindcss": "3.4.17",
     "typescript": "^5.9.3",
     "vercel": "^48.2.9",
-    "vite": "^7.1.7",
+    "vite": "^7.3.1",
     "vitest": "^3.2.4"
   },
   "engines": {
