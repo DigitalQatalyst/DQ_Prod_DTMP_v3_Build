@@ -69,77 +69,88 @@ export function AppRouter() {
     cache: new InMemoryCache(),
   });
 
+  // Check if authentication is enabled
+  const authEnabled = import.meta.env.VITE_ENABLE_AUTH !== 'false';
+
+  const routesContent = (
+    <Routes>
+      <Route path="/discover-dq" element={<DiscoverDQ />} />
+      <Route path="/coming-soon" element={<ComingSoonPage />} />
+      <Route path="/growth-sectors-coming-soon" element={<GrowthSectorsComingSoon />} />
+      <Route path="/onboarding/welcome" element={<OnboardingLanding />} />
+      <Route path="/onboarding/journey" element={<OnboardingJourney />} />
+      <Route path="/ghc" element={<GHCLanding />} />
+      <Route path="/6xd" element={<SixXDLanding />} />
+      <Route path="/6xd-products" element={<SixXDProductsLanding />} />
+      <Route path="/knowledge-center/products/digital-accelerators" element={<DigitalAcceleratorsLanding />} />
+      <Route path="/marketplace/*" element={<MarketplaceRouter />} />
+      <Route path="/*" element={<App />} />
+      <Route path="/courses/:itemId" element={<LmsCourseDetailPage />} />
+      <Route path="/lms" element={<LmsCourses />} />
+      <Route path="/lms/my-learning" element={<MyLearningDashboard />} />
+      <Route path="/lms/:courseSlug/lesson/:lessonId" element={<LmsLessonPage />} />
+      <Route path="/lms/:slug/reviews" element={<LmsCourseReviewsPage />} />
+      <Route path="/lms/:slug/assessment" element={<LmsCourseAssessmentPage />} />
+      <Route
+        path="/lms/:slug"
+        element={<LmsCourseDetailPageWrapper />}
+      />
+      <Route
+        path="/onboarding/:itemId"
+        element={
+          <MarketplaceDetailsPage
+            marketplaceType="onboarding"
+          />
+        }
+      />
+      {/* Dashboard */}
+      <Route
+        path="/dashboard/*"
+        element={<DashboardRouter />}
+      />
+      {/* Admin Section */}
+      <Route path="/admin/guides" element={<AdminGuidesList />} />
+      <Route path="/admin/guides/new" element={<GuideEditor />} />
+      <Route path="/admin/guides/:id" element={<GuideEditor />} />
+      <Route path="/admin/ghc-inspector" element={<React.Suspense fallback={<div>Loading...</div>}><GHCInspectorPage /></React.Suspense>} />
+
+      {/* Onboarding & Directory */}
+      <Route path="/onboarding/:itemId/details" element={<MarketplaceDetailsPage marketplaceType="onboarding" />} />
+      <Route path="/work-directory/units/:slug" element={<UnitProfilePage />} />
+      <Route path="/work-directory/positions/:slug" element={<WorkPositionProfilePage />} />
+      <Route path="/roles/:slug" element={<RoleProfilePage />} />
+
+      {/* Messaging & Communities */}
+      {/* Note: I've used the CommunitiesRouter here. 
+Ensure the routes from 'develop' (Feed, Analytics, etc.) 
+are moved into the CommunitiesRouter component. 
+*/}
+      <Route path="/communities/*" element={<CommunitiesRouter />} />
+      <Route path="/messages" element={<MessagingDashboard />} />
+
+      {/* Utilities */}
+      <Route path="/asset-library" element={<AssetLibraryPage />} />
+      <Route path="/discover-dq" element={<DiscoverDQ />} />
+      <Route path="/thank-you" element={<ThankYou />} />
+      <Route path="/404" element={<NotFound />} />
+
+      <Route path="*" element={<Navigate to="/404" replace />} />
+    </Routes>
+  );
+
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
         <AuthProvider>
           <CommunitiesAuthProvider>
             <ChatBot />
-            <ProtectedRoute>
-              <Routes>
-                <Route path="/discover-dq" element={<DiscoverDQ />} />
-                <Route path="/coming-soon" element={<ComingSoonPage />} />
-                <Route path="/growth-sectors-coming-soon" element={<GrowthSectorsComingSoon />} />
-                <Route path="/onboarding/welcome" element={<OnboardingLanding />} />
-                <Route path="/onboarding/journey" element={<OnboardingJourney />} />
-                <Route path="/ghc" element={<GHCLanding />} />
-                <Route path="/6xd" element={<SixXDLanding />} />
-                <Route path="/6xd-products" element={<SixXDProductsLanding />} />
-                <Route path="/knowledge-center/products/digital-accelerators" element={<DigitalAcceleratorsLanding />} />
-                <Route path="/marketplace/*" element={<MarketplaceRouter />} />
-                <Route path="/*" element={<App />} />
-                <Route path="/courses/:itemId" element={<LmsCourseDetailPage />} />
-                <Route path="/lms" element={<LmsCourses />} />
-                <Route path="/lms/my-learning" element={<MyLearningDashboard />} />
-                <Route path="/lms/:courseSlug/lesson/:lessonId" element={<LmsLessonPage />} />
-                <Route path="/lms/:slug/reviews" element={<LmsCourseReviewsPage />} />
-                <Route path="/lms/:slug/assessment" element={<LmsCourseAssessmentPage />} />
-                <Route
-                  path="/lms/:slug"
-                  element={<LmsCourseDetailPageWrapper />}
-                />
-                <Route
-                  path="/onboarding/:itemId"
-                  element={
-                    <MarketplaceDetailsPage
-                      marketplaceType="onboarding"
-                    />
-                  }
-                />
-                {/* Dashboard */}
-                <Route
-                  path="/dashboard/*"
-                  element={<DashboardRouter />}
-                />
-                {/* Admin Section */}
-                <Route path="/admin/guides" element={<AdminGuidesList />} />
-                <Route path="/admin/guides/new" element={<GuideEditor />} />
-                <Route path="/admin/guides/:id" element={<GuideEditor />} />
-                <Route path="/admin/ghc-inspector" element={<React.Suspense fallback={<div>Loading...</div>}><GHCInspectorPage /></React.Suspense>} />
-
-                {/* Onboarding & Directory */}
-                <Route path="/onboarding/:itemId/details" element={<MarketplaceDetailsPage marketplaceType="onboarding" />} />
-                <Route path="/work-directory/units/:slug" element={<UnitProfilePage />} />
-                <Route path="/work-directory/positions/:slug" element={<WorkPositionProfilePage />} />
-                <Route path="/roles/:slug" element={<RoleProfilePage />} />
-
-                {/* Messaging & Communities */}
-                {/* Note: I've used the CommunitiesRouter here. 
-    Ensure the routes from 'develop' (Feed, Analytics, etc.) 
-    are moved into the CommunitiesRouter component. 
-*/}
-                <Route path="/communities/*" element={<CommunitiesRouter />} />
-                <Route path="/messages" element={<MessagingDashboard />} />
-
-                {/* Utilities */}
-                <Route path="/asset-library" element={<AssetLibraryPage />} />
-                <Route path="/discover-dq" element={<DiscoverDQ />} />
-                <Route path="/thank-you" element={<ThankYou />} />
-                <Route path="/404" element={<NotFound />} />
-
-                <Route path="*" element={<Navigate to="/404" replace />} />
-              </Routes>
-            </ProtectedRoute>
+            {authEnabled ? (
+              <ProtectedRoute>
+                {routesContent}
+              </ProtectedRoute>
+            ) : (
+              routesContent
+            )}
           </CommunitiesAuthProvider>
         </AuthProvider>
       </BrowserRouter>

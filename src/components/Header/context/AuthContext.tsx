@@ -27,6 +27,27 @@ export function AuthProvider({
 }: Readonly<{
   children: ReactNode;
 }>) {
+  // Check if authentication is enabled
+  const authEnabled = import.meta.env.VITE_ENABLE_AUTH !== 'false';
+  
+  // If auth is disabled, provide mock context
+  if (!authEnabled) {
+    const mockAuthContext: AuthContextType = {
+      user: null,
+      isLoading: false,
+      login: () => console.log('Login disabled in development'),
+      signup: () => console.log('Signup disabled in development'),
+      logout: () => console.log('Logout disabled in development')
+    };
+
+    return (
+      <AuthContext.Provider value={mockAuthContext}>
+        {children}
+      </AuthContext.Provider>
+    );
+  }
+
+  // Original auth logic when enabled
   const { instance, accounts } = useMsal();
   const isAuthenticated = useIsAuthenticated();
   const [isLoading, setIsLoading] = useState(true);
