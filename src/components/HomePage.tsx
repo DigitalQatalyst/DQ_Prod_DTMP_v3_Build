@@ -28,23 +28,20 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white font-['Manrope']">
       {/* Header */}
-      <header className="sticky top-0 z-50 h-16" style={{ backgroundColor: '#0A0A1A' }}>
+      <header className="sticky top-0 z-50 h-12" style={{ backgroundColor: '#0A0A1A' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Logo */}
-            <div className="text-white text-lg font-bold">STC Bank</div>
-            
-            {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-white/85 hover:text-white text-sm font-medium transition-colors">Home</a>
+            {/* Left Side - Logo and Explore */}
+            <div className="flex items-center space-x-6">
+              <div className="text-white text-sm font-bold">STC Bank</div>
               <div className="relative group">
                 <button className="text-white/85 hover:text-white text-sm font-medium transition-colors flex items-center">
                   Explore
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="py-2">
                     <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Learning Centre</a>
                     <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Knowledge Centre</a>
@@ -55,13 +52,18 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </nav>
+            </div>
 
-            {/* Request Support Button */}
-            <button className="px-4 py-2 bg-white text-sm font-semibold rounded-full transition-colors"
-                    style={{ color: '#0A0A1A' }}>
-              Request Support
-            </button>
+            {/* Right Side Buttons */}
+            <div className="flex items-center space-x-3">
+              <button className="px-4 py-1.5 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-100 transition-colors">
+                Request Support
+              </button>
+              <button className="px-4 py-1.5 text-white text-sm font-medium rounded-md hover:opacity-90 transition-colors"
+                      style={{ backgroundColor: '#5F2D91' }}>
+                Sign In
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -184,7 +186,12 @@ const HomePage: React.FC = () => {
             {/* Discern */}
             <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
                  style={{ borderBottom: '3px solid #2563EB' }}>
-              <div className="w-3 h-3 rounded-full mb-4" style={{ backgroundColor: '#2563EB' }}></div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
               <h3 className="text-base font-bold mb-3" style={{ color: '#2563EB' }}>DISCERN</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Understand current state and identify transformation opportunities.
@@ -199,7 +206,12 @@ const HomePage: React.FC = () => {
             {/* Design */}
             <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
                  style={{ borderBottom: '3px solid #0D9488' }}>
-              <div className="w-3 h-3 rounded-full mb-4" style={{ backgroundColor: '#0D9488' }}></div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                </svg>
+              </div>
               <h3 className="text-base font-bold mb-3" style={{ color: '#0D9488' }}>DESIGN</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Create blueprints and architecture for transformation initiatives.
@@ -214,7 +226,12 @@ const HomePage: React.FC = () => {
             {/* Deploy */}
             <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
                  style={{ borderBottom: '3px solid #7C3AED' }}>
-              <div className="w-3 h-3 rounded-full mb-4" style={{ backgroundColor: '#7C3AED' }}></div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
               <h3 className="text-base font-bold mb-3" style={{ color: '#7C3AED' }}>DEPLOY</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Execute and implement transformation solutions across the enterprise.
@@ -229,7 +246,12 @@ const HomePage: React.FC = () => {
             {/* Drive */}
             <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
                  style={{ borderBottom: '3px solid #EA580C' }}>
-              <div className="w-3 h-3 rounded-full mb-4" style={{ backgroundColor: '#EA580C' }}></div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
               <h3 className="text-base font-bold mb-3" style={{ color: '#EA580C' }}>DRIVE</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Monitor, optimize, and sustain transformation outcomes.
@@ -261,7 +283,7 @@ const HomePage: React.FC = () => {
             {/* Learning Centre */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
-                   style={{ background: 'linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%)' }}>
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -275,7 +297,7 @@ const HomePage: React.FC = () => {
             {/* Knowledge Centre */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
-                   style={{ background: 'linear-gradient(135deg, #10B981 0%, #047857 100%)' }}>
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
@@ -289,7 +311,7 @@ const HomePage: React.FC = () => {
             {/* Document Studio */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
-                   style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)' }}>
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
@@ -303,7 +325,7 @@ const HomePage: React.FC = () => {
             {/* Solution Specs */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
-                   style={{ background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)' }}>
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg>
@@ -317,7 +339,7 @@ const HomePage: React.FC = () => {
             {/* Solution Build */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
-                   style={{ background: 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)' }}>
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
@@ -331,7 +353,7 @@ const HomePage: React.FC = () => {
             {/* Lifecycle Management */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
-                   style={{ background: 'linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)' }}>
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
@@ -370,8 +392,9 @@ const HomePage: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Strategic Planning */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2-2V7a2 2 0 012-2h2a2 2 0 002 2v2a2 2 0 002 2h2a2 2 0 012-2V7a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 00-2 2h-2a2 2 0 00-2 2v6a2 2 0 01-2 2H9z" />
                 </svg>
               </div>
@@ -383,8 +406,9 @@ const HomePage: React.FC = () => {
 
             {/* Architecture Design */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
@@ -396,8 +420,9 @@ const HomePage: React.FC = () => {
 
             {/* Project Delivery */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FAF5FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#7C3AED' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
@@ -409,8 +434,9 @@ const HomePage: React.FC = () => {
 
             {/* Operations Management */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF7ED' }}>
-                <svg className="w-4 h-4" style={{ color: '#EA580C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
@@ -422,8 +448,9 @@ const HomePage: React.FC = () => {
 
             {/* Risk & Compliance */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
@@ -435,8 +462,9 @@ const HomePage: React.FC = () => {
 
             {/* Technology Platforms */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                 </svg>
               </div>
@@ -518,8 +546,9 @@ const HomePage: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Strategic Alignment */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -531,8 +560,9 @@ const HomePage: React.FC = () => {
 
             {/* Risk Mitigation */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
@@ -544,8 +574,9 @@ const HomePage: React.FC = () => {
 
             {/* Operational Excellence */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FAF5FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#7C3AED' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
@@ -557,8 +588,9 @@ const HomePage: React.FC = () => {
 
             {/* Innovation Acceleration */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF7ED' }}>
-                <svg className="w-4 h-4" style={{ color: '#EA580C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -570,8 +602,9 @@ const HomePage: React.FC = () => {
 
             {/* Cost Optimization */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
@@ -583,8 +616,9 @@ const HomePage: React.FC = () => {
 
             {/* Scalable Growth */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
                 </svg>
               </div>
@@ -614,8 +648,9 @@ const HomePage: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Transformation Office */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2-2V7a2 2 0 012-2h2a2 2 0 002 2v2a2 2 0 002 2h2a2 2 0 012-2V7a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 00-2 2h-2a2 2 0 00-2 2v6a2 2 0 01-2 2H9z" />
                 </svg>
               </div>
@@ -627,8 +662,9 @@ const HomePage: React.FC = () => {
 
             {/* Strategy & Leadership */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -640,8 +676,9 @@ const HomePage: React.FC = () => {
 
             {/* Business Architects */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FAF5FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#7C3AED' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
@@ -653,8 +690,9 @@ const HomePage: React.FC = () => {
 
             {/* Project & Product Teams */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF7ED' }}>
-                <svg className="w-4 h-4" style={{ color: '#EA580C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
@@ -666,8 +704,9 @@ const HomePage: React.FC = () => {
 
             {/* Lifecycle Operations */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
@@ -679,8 +718,9 @@ const HomePage: React.FC = () => {
 
             {/* Security & DevOps */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
