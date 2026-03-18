@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white font-['Manrope']">
       {/* Header */}
-      <header className="sticky top-0 z-50 h-14" style={{ backgroundColor: '#2D1052' }}>
+      <header className="sticky top-0 z-50 h-16" style={{ backgroundColor: '#0A0A1A' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
             {/* Logo */}
@@ -37,16 +37,30 @@ const HomePage: React.FC = () => {
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#" className="text-white/85 hover:text-white text-sm font-medium transition-colors">Home</a>
-              <a href="#" className="text-white/85 hover:text-white text-sm font-medium transition-colors">Marketplaces</a>
-              <a href="#" className="text-white/85 hover:text-white text-sm font-medium transition-colors">Dashboard</a>
-              <a href="#" className="text-white/85 hover:text-white text-sm font-medium transition-colors">Resources</a>
-              <a href="#" className="text-white/85 hover:text-white text-sm font-medium transition-colors">Support</a>
+              <div className="relative group">
+                <button className="text-white/85 hover:text-white text-sm font-medium transition-colors flex items-center">
+                  Explore
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="py-2">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Learning Centre</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Knowledge Centre</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Document Studio</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solution Specs</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solution Build</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lifecycle Management</a>
+                  </div>
+                </div>
+              </div>
             </nav>
 
-            {/* Sign In Button */}
+            {/* Request Support Button */}
             <button className="px-4 py-2 bg-white text-sm font-semibold rounded-full transition-colors"
-                    style={{ color: '#5F2D91' }}>
-              Sign In
+                    style={{ color: '#0A0A1A' }}>
+              Request Support
             </button>
           </div>
         </div>
@@ -55,12 +69,6 @@ const HomePage: React.FC = () => {
       <section className="min-h-[88vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8" 
                style={{ background: 'linear-gradient(110deg, #FF6B4A 0%, #5F2D91 45%, #2D1052 100%)' }}>
         <div className="max-w-4xl mx-auto py-20">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full text-white text-xs font-semibold tracking-wider mb-8"
-               style={{ backgroundColor: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)' }}>
-            DIGITAL TRANSFORMATION MANAGEMENT PLATFORM
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-6xl font-extrabold text-white leading-tight mb-6 max-w-4xl">
             One Platform. One Direction. Governing STC Bank's Digital Transformation.
@@ -72,7 +80,7 @@ const HomePage: React.FC = () => {
           </p>
 
           {/* AI Explore Bar */}
-          <div className="max-w-lg mx-auto mb-8">
+          <div className="max-w-lg mx-auto mb-12">
             <div className="relative">
               <input
                 type="text"
@@ -91,16 +99,6 @@ const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Chips */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {['Learning Center', 'Document Studio', 'Portfolio Management', 'Support Services'].map((chip) => (
-              <button key={chip} className="px-4 py-2 rounded-full text-white text-xs font-medium"
-                      style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
-                {chip}
-              </button>
-            ))}
-          </div>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 rounded-full text-white font-semibold text-base"
@@ -114,7 +112,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -169,14 +167,10 @@ const HomePage: React.FC = () => {
         </div>
       </section>
       {/* 4D Framework Section */}
-      <section className="py-20" style={{ backgroundColor: '#F5F7FF' }}>
+      <section className="py-24" style={{ backgroundColor: '#F0F1F8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-4"
-                 style={{ backgroundColor: '#FFF3EF', color: '#CC4A1E' }}>
-              FRAMEWORK
-            </div>
             <h2 className="text-4xl font-bold mb-4" style={{ color: '#0D0F1A' }}>
               The 4D Transformation Model
             </h2>
@@ -250,14 +244,10 @@ const HomePage: React.FC = () => {
         </div>
       </section>
       {/* Six Marketplaces Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-4"
-                 style={{ backgroundColor: '#FFF3EF', color: '#CC4A1E' }}>
-              MARKETPLACES
-            </div>
             <h2 className="text-4xl font-bold mb-4" style={{ color: '#0D0F1A' }}>
               Six Integrated EA Marketplaces
             </h2>
@@ -270,8 +260,9 @@ const HomePage: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Learning Centre */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
@@ -283,8 +274,9 @@ const HomePage: React.FC = () => {
 
             {/* Knowledge Centre */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#2563EB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #10B981 0%, #047857 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
@@ -296,8 +288,9 @@ const HomePage: React.FC = () => {
 
             {/* Document Studio */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
@@ -309,8 +302,9 @@ const HomePage: React.FC = () => {
 
             {/* Solution Specs */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#F0FDF4' }}>
-                <svg className="w-4 h-4" style={{ color: '#0D9488' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg>
               </div>
@@ -322,8 +316,9 @@ const HomePage: React.FC = () => {
 
             {/* Solution Build */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FAF5FF' }}>
-                <svg className="w-4 h-4" style={{ color: '#7C3AED' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
@@ -335,8 +330,9 @@ const HomePage: React.FC = () => {
 
             {/* Lifecycle Management */}
             <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF7ED' }}>
-                <svg className="w-4 h-4" style={{ color: '#EA580C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+                   style={{ background: 'linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)' }}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
@@ -358,14 +354,10 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Built to Integrate Service Domains Section */}
-      <section className="py-20" style={{ backgroundColor: '#F5F7FF' }}>
+      <section className="py-24" style={{ backgroundColor: '#F0F1F8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-4"
-                 style={{ backgroundColor: '#FFF3EF', color: '#CC4A1E' }}>
-              INTEGRATION
-            </div>
             <h2 className="text-4xl font-bold mb-4" style={{ color: '#0D0F1A' }}>
               Built to Integrate Service Domains
             </h2>
@@ -458,14 +450,10 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Enterprise EA Value Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-4"
-                 style={{ backgroundColor: '#FFF3EF', color: '#CC4A1E' }}>
-              VALUE
-            </div>
             <h2 className="text-4xl font-bold mb-4" style={{ color: '#0D0F1A' }}>
               Enterprise EA Value
             </h2>
@@ -610,14 +598,10 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Contributors Section */}
-      <section className="py-20" style={{ backgroundColor: '#F5F7FF' }}>
+      <section className="py-24" style={{ backgroundColor: '#F0F1F8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-4"
-                 style={{ backgroundColor: '#FFF3EF', color: '#CC4A1E' }}>
-              CONTRIBUTORS
-            </div>
             <h2 className="text-4xl font-bold mb-4" style={{ color: '#0D0F1A' }}>
               Who Uses the STC Bank Transformation Platform
             </h2>
@@ -710,7 +694,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Footer CTA Section */}
-      <section className="py-20" style={{ backgroundColor: '#2D1052' }}>
+      <section className="py-24" style={{ backgroundColor: '#2D1052' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl font-extrabold text-white mb-6 leading-tight">
             Ready to Govern STC Bank's Digital Transformation?
