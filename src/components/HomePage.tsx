@@ -33,22 +33,90 @@ const HomePage: React.FC = () => {
           <div className="flex items-center justify-between h-full">
             {/* Left Side - Logo and Explore */}
             <div className="flex items-center space-x-6">
-              <div className="text-white text-sm font-bold">STC Bank</div>
+              <div className="flex items-center">
+                <img src="/images/STCBank-logo.png" alt="STC Bank" className="h-16 w-auto" 
+                     onError={(e) => {
+                       e.currentTarget.style.display = 'none';
+                       const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                       if (nextElement) {
+                         nextElement.style.display = 'block';
+                       }
+                     }} />
+                <div className="text-white text-lg font-bold hidden">STC Bank</div>
+              </div>
               <div className="relative group">
-                <button className="text-white/85 hover:text-white text-sm font-medium transition-colors flex items-center">
+                <button className="px-4 py-2 rounded-lg border border-white/30 text-white hover:bg-white/10 text-sm font-medium transition-all duration-200 flex items-center">
                   Explore
-                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-2">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Learning Centre</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Knowledge Centre</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Document Studio</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solution Specs</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solution Build</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Lifecycle Management</a>
+                <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 z-50">
+                  <div className="p-6">
+                    {/* Header */}
+                    <div className="mb-6">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">Explore Marketplaces</h3>
+                      <p className="text-sm text-gray-600">Discover STC Bank's transformation services, products, and resources</p>
+                    </div>
+
+                    {/* Marketplace Categories */}
+                    <div className="space-y-4">
+                      {/* Learning & Knowledge */}
+                      <div className="group/item hover:bg-gray-50 rounded-lg p-3 transition-colors cursor-pointer">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" 
+                               style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-sm font-semibold text-gray-900 mb-1">Learning & Knowledge</h4>
+                            <p className="text-xs text-gray-600">Access learning pathways, knowledge base, and transformation fundamentals</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Document & Solutions */}
+                      <div className="group/item hover:bg-gray-50 rounded-lg p-3 transition-colors cursor-pointer">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" 
+                               style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-sm font-semibold text-gray-900 mb-1">Document & Solutions</h4>
+                            <p className="text-xs text-gray-600">AI-powered document studio and standardized solution specifications</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Build & Lifecycle */}
+                      <div className="group/item hover:bg-gray-50 rounded-lg p-3 transition-colors cursor-pointer">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" 
+                               style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-sm font-semibold text-gray-900 mb-1">Build & Lifecycle</h4>
+                            <p className="text-xs text-gray-600">Solution build resources and comprehensive lifecycle management</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Footer CTA */}
+                    <div className="mt-6 pt-4 border-t border-gray-100">
+                      <button className="w-full px-4 py-2 rounded-lg text-white font-medium text-sm transition-colors"
+                              style={{ backgroundColor: '#FF6B4A' }}>
+                        View All Marketplaces →
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -82,22 +150,39 @@ const HomePage: React.FC = () => {
           </p>
 
           {/* AI Explore Bar */}
-          <div className="max-w-lg mx-auto mb-12">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="What transformation challenge can we help with?"
-                className="w-full px-6 py-4 rounded-full text-white placeholder-white/60 text-sm"
-                style={{ 
-                  backgroundColor: 'rgba(255,255,255,0.12)', 
-                  border: '1px solid rgba(255,255,255,0.25)',
-                  backdropFilter: 'blur(8px)'
-                }}
-              />
-              <button className="absolute right-2 top-2 px-6 py-2 rounded-full text-white text-sm font-semibold"
-                      style={{ backgroundColor: '#FF6B4A' }}>
-                Explore →
-              </button>
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="relative bg-white rounded-full shadow-lg border border-gray-200">
+              <div className="flex items-center px-6 py-4">
+                {/* Left Icon */}
+                <div className="flex-shrink-0 mr-4">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                  </svg>
+                </div>
+                
+                {/* Input Field */}
+                <input
+                  type="text"
+                  placeholder="Ask me anything about DTMP... What do you need help with?"
+                  className="flex-1 text-gray-700 placeholder-gray-400 text-base bg-transparent border-none outline-none"
+                />
+                
+                {/* Right Side - AI Ready + Chat Icon */}
+                <div className="flex items-center space-x-4 flex-shrink-0">
+                  {/* AI Ready Indicator */}
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-sm font-medium text-gray-600">AI Ready</span>
+                  </div>
+                  
+                  {/* Chat Icon */}
+                  <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.955 8.955 0 01-2.697-.413l-3.178 1.589a.75.75 0 01-1.072-.71l.004-2.47A8 8 0 013 12a8 8 0 018-8 8 8 0 018 8z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -184,15 +269,15 @@ const HomePage: React.FC = () => {
           {/* 4D Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Discern */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
+            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
                  style={{ borderBottom: '3px solid #2563EB' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-3" style={{ color: '#2563EB' }}>DISCERN</h3>
+              <h3 className="text-base font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300" style={{ color: '#2563EB' }}>DISCERN</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Understand current state and identify transformation opportunities.
               </p>
@@ -204,15 +289,15 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Design */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
+            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
                  style={{ borderBottom: '3px solid #0D9488' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-3" style={{ color: '#0D9488' }}>DESIGN</h3>
+              <h3 className="text-base font-bold mb-3 group-hover:text-teal-600 transition-colors duration-300" style={{ color: '#0D9488' }}>DESIGN</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Create blueprints and architecture for transformation initiatives.
               </p>
@@ -224,15 +309,15 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Deploy */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
+            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
                  style={{ borderBottom: '3px solid #7C3AED' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-3" style={{ color: '#7C3AED' }}>DEPLOY</h3>
+              <h3 className="text-base font-bold mb-3 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#7C3AED' }}>DEPLOY</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Execute and implement transformation solutions across the enterprise.
               </p>
@@ -244,15 +329,15 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Drive */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative"
+            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm relative hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
                  style={{ borderBottom: '3px solid #EA580C' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-3" style={{ color: '#EA580C' }}>DRIVE</h3>
+              <h3 className="text-base font-bold mb-3 group-hover:text-orange-600 transition-colors duration-300" style={{ color: '#EA580C' }}>DRIVE</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Monitor, optimize, and sustain transformation outcomes.
               </p>
@@ -281,84 +366,84 @@ const HomePage: React.FC = () => {
           {/* Marketplaces Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Learning Centre */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>DTMP Learning Centre</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>DTMP Learning Centre</h3>
               <p className="text-sm text-gray-600">
                 Structured pathways for EA literacy and transformation fundamentals.
               </p>
             </div>
 
             {/* Knowledge Centre */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>DTMP Knowledge Centre</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>DTMP Knowledge Centre</h3>
               <p className="text-sm text-gray-600">
                 Architecture knowledge, governance references, and strategy documents.
               </p>
             </div>
 
             {/* Document Studio */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>DTMP Document Studio</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>DTMP Document Studio</h3>
               <p className="text-sm text-gray-600">
                 AI-powered document generation with defined SLAs for all divisions.
               </p>
             </div>
 
             {/* Solution Specs */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>DTMP Solution Specs</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>DTMP Solution Specs</h3>
               <p className="text-sm text-gray-600">
                 Standardized architecture blueprints for transformation patterns.
               </p>
             </div>
 
             {/* Solution Build */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>DTMP Solution Build</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>DTMP Solution Build</h3>
               <p className="text-sm text-gray-600">
                 Build resources and delivery capacity for transformation initiatives.
               </p>
             </div>
 
             {/* Lifecycle Management */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>DTMP Lifecycle Management</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>DTMP Lifecycle Management</h3>
               <p className="text-sm text-gray-600">
                 Govern initiatives through stage gates and compliance tracking.
               </p>
@@ -391,84 +476,84 @@ const HomePage: React.FC = () => {
           {/* Integration Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Strategic Planning */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2-2V7a2 2 0 012-2h2a2 2 0 002 2v2a2 2 0 002 2h2a2 2 0 012-2V7a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 00-2 2h-2a2 2 0 00-2 2v6a2 2 0 01-2 2H9z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Strategic Planning</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Strategic Planning</h3>
               <p className="text-sm text-gray-600">
                 Enterprise strategy alignment and portfolio planning integration.
               </p>
             </div>
 
             {/* Architecture Design */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Architecture Design</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Architecture Design</h3>
               <p className="text-sm text-gray-600">
                 Solution architecture and technical design pattern integration.
               </p>
             </div>
 
             {/* Project Delivery */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Project Delivery</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Project Delivery</h3>
               <p className="text-sm text-gray-600">
                 Agile delivery frameworks and project management integration.
               </p>
             </div>
 
             {/* Operations Management */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Operations Management</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Operations Management</h3>
               <p className="text-sm text-gray-600">
                 Operational excellence and continuous improvement integration.
               </p>
             </div>
 
             {/* Risk & Compliance */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Risk & Compliance</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Risk & Compliance</h3>
               <p className="text-sm text-gray-600">
                 Governance frameworks and regulatory compliance integration.
               </p>
             </div>
 
             {/* Technology Platforms */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Technology Platforms</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Technology Platforms</h3>
               <p className="text-sm text-gray-600">
                 Infrastructure and platform services integration across the stack.
               </p>
@@ -545,84 +630,84 @@ const HomePage: React.FC = () => {
           {/* Value Propositions Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Strategic Alignment */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Strategic Alignment</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Strategic Alignment</h3>
               <p className="text-sm text-gray-600">
                 Ensure all transformation initiatives align with business strategy and deliver measurable value.
               </p>
             </div>
 
             {/* Risk Mitigation */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Risk Mitigation</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Risk Mitigation</h3>
               <p className="text-sm text-gray-600">
                 Proactive identification and management of transformation risks across all domains.
               </p>
             </div>
 
             {/* Operational Excellence */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Operational Excellence</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Operational Excellence</h3>
               <p className="text-sm text-gray-600">
                 Continuous improvement and optimization of transformation processes and outcomes.
               </p>
             </div>
 
             {/* Innovation Acceleration */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Innovation Acceleration</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Innovation Acceleration</h3>
               <p className="text-sm text-gray-600">
                 Enable rapid experimentation and deployment of innovative solutions across the enterprise.
               </p>
             </div>
 
             {/* Cost Optimization */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Cost Optimization</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Cost Optimization</h3>
               <p className="text-sm text-gray-600">
                 Systematic reduction of transformation costs through standardization and automation.
               </p>
             </div>
 
             {/* Scalable Growth */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Scalable Growth</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Scalable Growth</h3>
               <p className="text-sm text-gray-600">
                 Build transformation capabilities that scale with business growth and market demands.
               </p>
@@ -647,84 +732,84 @@ const HomePage: React.FC = () => {
           {/* Contributors Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Transformation Office */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2-2V7a2 2 0 012-2h2a2 2 0 002 2v2a2 2 0 002 2h2a2 2 0 012-2V7a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 00-2 2h-2a2 2 0 00-2 2v6a2 2 0 01-2 2H9z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Transformation Office</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Transformation Office</h3>
               <p className="text-sm text-gray-600">
                 Portfolio oversight, governance frameworks, and strategic alignment across all initiatives.
               </p>
             </div>
 
             {/* Strategy & Leadership */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Strategy & Leadership</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Strategy & Leadership</h3>
               <p className="text-sm text-gray-600">
                 Executive dashboards, strategic planning tools, and transformation impact measurement.
               </p>
             </div>
 
             {/* Business Architects */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Business Architects</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Business Architects</h3>
               <p className="text-sm text-gray-600">
                 Process modeling, capability mapping, and solution architecture design patterns.
               </p>
             </div>
 
             {/* Project & Product Teams */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Project & Product Teams</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Project & Product Teams</h3>
               <p className="text-sm text-gray-600">
                 Delivery frameworks, resource planning, and cross-functional collaboration tools.
               </p>
             </div>
 
             {/* Lifecycle Operations */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Lifecycle Operations</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Lifecycle Operations</h3>
               <p className="text-sm text-gray-600">
                 Stage gate management, compliance tracking, and operational excellence monitoring.
               </p>
             </div>
 
             {/* Security & DevOps */}
-            <div className="bg-white rounded-xl p-6 border shadow-sm" style={{ borderColor: '#E8EAFA' }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
+            <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group" style={{ borderColor: '#E8EAFA' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" 
                    style={{ background: 'linear-gradient(135deg, #FF6B4A 0%, #5F2D91 100%)' }}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-base font-bold mb-2" style={{ color: '#0D0F1A' }}>Security & DevOps</h3>
+              <h3 className="text-base font-bold mb-2 group-hover:text-purple-600 transition-colors duration-300" style={{ color: '#0D0F1A' }}>Security & DevOps</h3>
               <p className="text-sm text-gray-600">
                 Security frameworks, deployment pipelines, and infrastructure automation standards.
               </p>
